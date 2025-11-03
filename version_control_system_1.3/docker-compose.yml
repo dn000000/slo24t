@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  version-control:
+    build: .
+    volumes:
+      - ./configs:/app/configs
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/versions.db

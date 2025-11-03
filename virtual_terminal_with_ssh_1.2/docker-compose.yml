@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  virtual-terminal:
+    build: .
+    container_name: virtual-terminal
+    ports:
+      - "2222:2222"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+    networks:
+      - vt-network
+
+networks:
+  vt-network:
+    driver: bridge

@@ -1,0 +1,4 @@
+asyncssh>=2.13.1
+asyncio>=3.4.3
+bcrypt>=4.0.1
+docker>=6.1.2
